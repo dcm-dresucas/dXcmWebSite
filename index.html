@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stars.css">
+    <title>dXcm | Home</title>
+</head>
+<body>
+
+    <section id="home">
+
+    <div id="custom-cursor">
+        <div id="cursor-background"></div>
+        <div id="cursor-dot"></div>
+    </div>
+    <header>
+        <div>
+            <h1>dXcm</h1>
+        </div>
+        <nav>
+            <ul>
+                <li id="projects">Projects        <div class="holder1"></div></li>
+
+            
+                <li id="team">Team</div></li>
+                <li id="contact">Contact</div></li>
+                <li id="work">Work</div></li>
+                <li id="pricing">Pricing</div></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+
+    <div class="sky">
+        <p id="star1">.</p>
+        <p id="star2">.</p>
+        <p id="star3">.</p>
+        <p id="star4">.</p>
+        <p id="star5">.</p>
+        <p id="star6">.</p>
+        <p id="star7">.</p>
+        <p id="star8">.</p>
+        <p id="star9">.</p>
+        <p id="star10">.</p>
+        <p id="star11">.</p>
+        <p id="star12">.</p>
+        <p id="star13">.</p>
+        <p id="star14">.</p>
+        <p id="star15">.</p>
+        <p id="star16">.</p>
+        <p id="star17">.</p>
+        <p id="star18">.</p>
+        <p id="star19">.</p>
+        <p id="star20">.</p>
+        <p id="star21">.</p>
+        <p id="star22">.</p>
+        <p id="star23">.</p>
+        <p id="star24">.</p>
+        <p id="star25">.</p>
+        <p id="star26">.</p>
+        <p id="star27">.</p>
+        <p id="star28">.</p>
+        <p id="star29">.</p>
+        <p id="star30">.</p>
+        <p id="star31">.</p>
+        <p id="star32">.</p>
+        <p id="star33">.</p>
+        <p id="star34">.</p>
+        <p id="star35">.</p>
+        <p id="star36">.</p>
+        <p id="star37">.</p>
+        <p id="star38">.</p>
+        <p id="star39">.</p>
+        <p id="star40">.</p>
+        
+    </div>
+
+    <div class="planet">     
+    </div>
+
+<style>
+    #custom-cursor {
+        position: fixed;
+        pointer-events: none;
+        z-index: 1000;
+    }
+
+    #cursor-background, #cursor-dot {
+        position: absolute;
+        border-radius: 50%;
+    }
+
+    #cursor-background {
+        width: 30px;
+        height: 30px;
+        background-color: rgba(48, 48, 48, 0.2);
+        transform: translate(-50%, -50%);
+        animation: scale 1s ease-in-out infinite alternate;
+    }
+
+    #cursor-dot {
+        width: 8px;
+        height: 8px;
+        background-color: rgb(79, 79, 79);
+        transform: translate(-50%, -50%);
+        animation: scale 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes scale {
+        from {
+            transform: translate(-50%, -50%) scale(.7);
+        }
+        to {
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+    }
+</style>
+
+<script>
+    const cursorBackground = document.getElementById('cursor-background');
+    const cursorDot = document.getElementById('cursor-dot');
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    function animateCursor() {
+        cursorX += (mouseX - cursorX) * 0.1;
+        cursorY += (mouseY - cursorY) * 0.1;
+
+        cursorBackground.style.top = `${cursorY}px`;
+        cursorBackground.style.left = `${cursorX}px`;
+        cursorDot.style.top = `${cursorY}px`;
+        cursorDot.style.left = `${cursorX}px`;
+
+        requestAnimationFrame(animateCursor);
+    }
+
+    animateCursor();
+</script>
+
+
+    <div class="mainheadings" id="mainheadings">
+        <p class="textBig" align="center">
+            <span class="big2">Building Projects,</span> <br>
+            <span class="big1">Turning Dreams into Reality.</span>
+        </p>
+
+        <button id="projects-button">Projects</button>
+
+    </div>
+
+    <script>
+        function updateMainHeadings() {
+            var w = window.innerWidth;
+            var h = window.innerHeight;
+            var mainheadings = document.getElementById("mainheadings");
+            mainheadings.style.fontSize = (h / 100) + "px";
+            mainheadings.style.width = (w / 1.5) + "px";
+            mainheadings.style.top = "50%";
+            mainheadings.style.left = "50%";
+            mainheadings.style.transform = "translate(-50%, -50%)";
+        }
+        window.addEventListener("resize", updateMainHeadings);
+        updateMainHeadings();
+    </script>
+
+
+
+<script src="customcursor.js"></script>
+
+</section>
+
+</body>
+
+</html>
